@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	// initializing variables
 	var wins = 0;
 	$("#winsHere").text(wins);
 	var losses = 0;
@@ -21,15 +22,24 @@ $(document).ready(function(){
 	var ghostWeight = randomGhostNumber
 	$("#weight").text(ghostWeight);
 
+	// ghost click functions
+
 	$(".firstGhost").click(function(){
+		// choosing random number
 		var randomNumber = Math.floor(Math.random()*(12-1+1)+1);
 		var ghostOneWeight = randomNumber;
+		// adding random number to score
 		score += ghostOneWeight;
 		$("#theirWeight").text(score);
-
+		// deciding whether game has been won or lost
 		if (score == ghostWeight){
+			// printing last score
+			$("#theirWeight").text(score);
+			// winning function
 			winning();
 		} else if (score > ghostWeight){
+			$("#theirWeight").text(score);
+			// losing function
 			losing();
 	};
 	});
@@ -41,8 +51,10 @@ $(document).ready(function(){
 		$("#theirWeight").text(score);
 
 		if (score == ghostWeight){
+			$("#theirWeight").text(score);
 			winning();
 		} else if (score > ghostWeight){
+			$("#theirWeight").text(score);
 			losing();
 		};
 	});
@@ -54,8 +66,10 @@ $(document).ready(function(){
 		$("#theirWeight").text(score);
 
 		if (score == ghostWeight){
+			$("#theirWeight").text(score);
 			winning();
 		} else if (score > ghostWeight){
+			$("#theirWeight").text(score);
 			losing();
 		};
 	});
@@ -75,8 +89,7 @@ $(document).ready(function(){
 		};
 	});
 
-	
-
+	// functions for winning and losing
 	function winning(){
 		wins++;
 		$("#winsHere").text(wins);
