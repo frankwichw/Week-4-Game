@@ -1,3 +1,10 @@
 body {
 	background-color: #000;
+	background: url(../images/black_paper.png);
+	text-align: center;
+	color: #e0dbdb;
+}
+
+.ghostBox {
+	background: url(../images/ghost1.GIF);
 }
