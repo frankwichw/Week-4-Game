@@ -26,6 +26,12 @@ $(document).ready(function(){
 		var ghostOneWeight = randomNumber;
 		score += ghostOneWeight;
 		$("#theirWeight").text(score);
+
+		if (score == ghostWeight){
+			winning();
+		} else if (score > ghostWeight){
+			losing();
+	};
 	});
 
 	$(".secondGhost").click(function(){
@@ -33,6 +39,12 @@ $(document).ready(function(){
 		var ghostTwoWeight = randomNumber;
 		score += ghostTwoWeight;
 		$("#theirWeight").text(score);
+
+		if (score == ghostWeight){
+			winning();
+		} else if (score > ghostWeight){
+			losing();
+		};
 	});
 
 	$(".thirdGhost").click(function(){
@@ -40,6 +52,12 @@ $(document).ready(function(){
 		var ghostThreeWeight = randomNumber;
 		score += ghostThreeWeight;
 		$("#theirWeight").text(score);
+
+		if (score == ghostWeight){
+			winning();
+		} else if (score > ghostWeight){
+			losing();
+		};
 	});
 
 	$(".fourthGhost").click(function(){
@@ -47,29 +65,45 @@ $(document).ready(function(){
 		var ghostFourWeight = randomNumber;
 		score += ghostFourWeight;
 		$("#theirWeight").text(score);
-	});
 
-	if (score === ghostWeight){
+		if (score == ghostWeight){
+			$("#theirWeight").text(score);
 			winning();
 		} else if (score > ghostWeight){
+			$("#theirWeight").text(score);
 			losing();
+		};
+	});
+
+	
+
+	function winning(){
+		wins++;
+		$("#winsHere").text(wins);
+
+		randomGhostNumber = Math.floor(Math.random()*(120-1+19)+1);
+		ghostWeight = randomGhostNumber
+		$("#weight").text(ghostWeight);
+
+		score = 0;
+		$("#theirWeight").text(score);
+
+		alert("Finally I can go to bed.");
+	};
+
+	function losing(){
+		losses++;
+		$("#lossesHere").text(losses);
+		randomGhostNumber = Math.floor(Math.random()*(120-1+19)+1);
+		ghostWeight = randomGhostNumber
+		$("#weight").text(ghostWeight);
+
+		score = 0;
+		$("#theirWeight").text(score);
+
+		alert("Just a few more minutes, then I can go to bed.");
 	};
 
 });
 
-function winning(){
-	wins++;
-	$("#winsHere").text(wins);
 
-	randomGhostNumber = Math.floor(Math.random()*(120-1+19)+1);
-	ghostWeight = randomGhostNumber
-	$("#weight").text(ghostWeight);
-};
-
-function losing(){
-	losses++;
-	$("#lossesHere").text(losses);
-	randomGhostNumber = Math.floor(Math.random()*(120-1+19)+1);
-	ghostWeight = randomGhostNumber
-	$("#weight").text(ghostWeight);
-};
