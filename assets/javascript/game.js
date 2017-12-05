@@ -35,12 +35,12 @@ $(document).ready(function(){
 		if (score == ghostWeight){
 			// printing last score
 			$("#theirWeight").text(score);
-			// winning function
-			winning();
+			// winning function, set to wait to execute 
+			setTimeout(function(){winning(); }, 100);
 		} else if (score > ghostWeight){
 			$("#theirWeight").text(score);
-			// losing function
-			losing();
+			// losing function, set to wait to execute
+			setTimeout(function(){losing(); }, 100);
 	};
 	});
 
@@ -52,10 +52,10 @@ $(document).ready(function(){
 
 		if (score == ghostWeight){
 			$("#theirWeight").text(score);
-			winning();
+			setTimeout(function(){winning(); }, 100);
 		} else if (score > ghostWeight){
 			$("#theirWeight").text(score);
-			losing();
+			setTimeout(function(){losing(); }, 100);
 		};
 	});
 
@@ -67,10 +67,10 @@ $(document).ready(function(){
 
 		if (score == ghostWeight){
 			$("#theirWeight").text(score);
-			winning();
+			setTimeout(function(){winning(); }, 100);
 		} else if (score > ghostWeight){
 			$("#theirWeight").text(score);
-			losing();
+			setTimeout(function(){losing(); }, 100);
 		};
 	});
 
@@ -82,10 +82,10 @@ $(document).ready(function(){
 
 		if (score == ghostWeight){
 			$("#theirWeight").text(score);
-			winning();
+			setTimeout(function(){winning(); }, 100);
 		} else if (score > ghostWeight){
 			$("#theirWeight").text(score);
-			losing();
+			setTimeout(function(){losing(); }, 100);
 		};
 	});
 
