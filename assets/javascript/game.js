@@ -1,7 +1,9 @@
 $(document).ready(function(){
 	// initializing variables
 	var wins = 0;
+	// adding wins number to page using jQuery
 	$("#winsHere").text(wins);
+
 	var losses = 0;
 	$("#lossesHere").text(losses);
 
@@ -12,14 +14,18 @@ $(document).ready(function(){
 	var ghostTwoWeight = 0;
 	var ghostThreeWeight = 0;
 	var ghostFourWeight = 0;
+
 	// generate random image of your ghost
 	var randomNumber = Math.floor(Math.random()*(4-1+1)+1);
+	// generate the image path
 	var imgName = "yourghost" + randomNumber + ".png";
+	// set the image source on the page to the image path generated
 	document.getElementById("imageid").src= "assets/images/" + imgName;
 
 	// generate random number for your ghost's weight
 	var randomGhostNumber = Math.floor(Math.random()*(120-1+19)+1);
 	var ghostWeight = randomGhostNumber
+	// set text on page to the weight
 	$("#weight").text(ghostWeight);
 
 	// ghost click functions
@@ -91,9 +97,12 @@ $(document).ready(function(){
 
 	// functions for winning and losing
 	function winning(){
+		// add to wins number
 		wins++;
+		// adds text to page using jQuery
 		$("#winsHere").text(wins);
 
+		// resets game
 		randomGhostNumber = Math.floor(Math.random()*(120-1+19)+1);
 		ghostWeight = randomGhostNumber
 		$("#weight").text(ghostWeight);
@@ -101,12 +110,17 @@ $(document).ready(function(){
 		score = 0;
 		$("#theirWeight").text(score);
 
+		// alerts you that you've won
 		alert("Finally I can go to bed.");
 	};
 
 	function losing(){
+		// adds to losses number
 		losses++;
+		// adds text to page using jQuery
 		$("#lossesHere").text(losses);
+
+		// resets game
 		randomGhostNumber = Math.floor(Math.random()*(120-1+19)+1);
 		ghostWeight = randomGhostNumber
 		$("#weight").text(ghostWeight);
@@ -114,6 +128,7 @@ $(document).ready(function(){
 		score = 0;
 		$("#theirWeight").text(score);
 
+		// alerts you that you've lost
 		alert("Just a few more minutes, then I can go to bed.");
 	};
 
